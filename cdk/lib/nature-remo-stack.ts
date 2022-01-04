@@ -69,7 +69,7 @@ export class NatureRemoStack extends Stack {
             ),
           }),
           resultSelector: {
-            "Events.$": "$.ResponseBody[1].newest_events",
+            "Events.$": "$.ResponseBody[0].newest_events",
           },
           resultPath: "$.NatureRemoOutput",
         }
