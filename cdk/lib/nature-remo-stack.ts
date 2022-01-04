@@ -21,7 +21,7 @@ export class NatureRemoStack extends Stack {
       "NatureRemoEndpoint",
       {
         defaultIntegration: new aws_apigateway.HttpIntegration(
-          "https://api.natre.global/1/devices",
+          "https://api.nature.global/1/devices",
           {
             options: {
               requestParameters: {
@@ -65,7 +65,7 @@ export class NatureRemoStack extends Stack {
           method: aws_stepfunctions_tasks.HttpMethod.GET,
           headers: aws_stepfunctions.TaskInput.fromObject({
             "x-Authorization": aws_stepfunctions.JsonPath.stringAt(
-              "States.Array(States.Format('Bearer {}', $.SecretOutput.Token))",
+              "States.Array(States.Format('Bearer {}', $.SecretOutput.Token))"
             ),
           }),
           resultSelector: {
